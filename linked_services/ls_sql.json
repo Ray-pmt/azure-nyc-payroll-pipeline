@@ -1,0 +1,9 @@
+{
+  "name": "LS_SQL",
+  "properties": {
+    "type": "AzureSqlDatabase",
+    "typeProperties": {
+      "connectionString": "Server=tcp:sqlserverudacity.database.windows.net,1433;Database=db_nycpayroll;User ID=<username>;Password=<password>;"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "sql_nyc_payroll",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "LS_SQL",
+      "type": "LinkedServiceReference"
+    },
+    "structure": [
+      { "name": "FiscalYear", "type": "Int32" },
+      { "name": "AgencyName", "type": "String" },
+      { "name": "TotalPaid", "type": "Double" }
+    ],
+    "type": "AzureSqlTable",
+    "typeProperties": {
+      "tableName": "dbo.NYC_Payroll_Summary"
+    }
+  }
+}

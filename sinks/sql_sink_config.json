@@ -1,0 +1,11 @@
+{
+  "name": "sql_sink_config",
+  "properties": {
+    "type": "AzureSqlSink",
+    "typeProperties": {
+      "tableName": "dbo.NYC_Payroll_Summary",
+      "writeBatchSize": 1000,
+      "writeBatchTimeout": "00:01:00"
+    }
+  }
+}

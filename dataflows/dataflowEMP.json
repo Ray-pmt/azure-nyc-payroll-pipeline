@@ -1,0 +1,43 @@
+{
+  "name": "dataflowEMP",
+  "properties": {
+    "type": "MappingDataFlow",
+    "typeProperties": {
+      "sources": [
+        {
+          "name": "EMP_Source",
+          "dataset": {
+            "referenceName": "EMP_Payroll_CSV",
+            "type": "DatasetReference"
+          },
+          "schema": [
+            { "name": "FiscalYear", "type": "Int32" },
+            { "name": "AgencyName", "type": "String" },
+            { "name": "TotalPaid", "type": "Double" }
+          ]
+        }
+      ],
+      "transformations": [
+        {
+          "name": "SelectColumns",
+          "transformation": "Select",
+          "columns": [ "FiscalYear", "AgencyName", "TotalPaid" ]
+        },
+        {
+          "name": "FilterData",
+          "transformation": "Filter",
+          "condition": "FiscalYear > 2019"
+        }
+      ],
+      "sinks": [
+        {
+          "name": "EMP_Sink",
+          "dataset": {
+            "referenceName": "EMP_Sql_Dataset",
+            "type": "DatasetReference"
+          }
+        }
+      ]
+    }
+  }
+}
